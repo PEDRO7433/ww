@@ -14,6 +14,8 @@
 			}
 			
 			.header {
+				position: fixed;
+				top: 0;
 				display: block;
 				background-color: #0080ff;
 			}
@@ -26,14 +28,45 @@
 				border-radius: 20px;
 				margin: auto;
 			}
+			
+			.navbar {
+				position: fixed;
+				width: 100%;
+				display: block;
+				background-color: #515151;
+			}
+			.item {
+				display: inline;
+				float: left;
+			}
+			.link {
+				text-decoration: none;
+				foreground-color: #ffffff;
+				padding: 10px;
+			}
+			
 		</style>
 	</head>
 	<body>
 		<div class="header">
 			<img class="logo" src="icon.png"/>
+			<nav class="navbar">
+				<ul class="navlist">
+					<li class="item"><a class="link" id="aOpis" onclick="goOpis()">Opis</a></li>
+					<li class="item"><a class="link" id="aDrop" onclick="goDrop()">Merch Drop</a></li>
+				</ul>
+			</nav>
 		</div>
 		<div class="main">
 			<embed class="page" id="embed" type="text/html" src="opis.html" width=100% height=100%>
 		</div>
 	</body>
+	<script>
+		function goOpis() {
+			document.getElementById("embed").src = "opis.html";
+		}
+		function goDrop() {
+			document.getElementById("embed").src = "drop.html";
+		}
+	</script>
 </html> 
